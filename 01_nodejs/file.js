@@ -2,6 +2,9 @@
 
 // the node:fs module enables interacting with the file system in a way modeled on standard POSIX functions.
 const fs = require("fs");
+const os = require("os");
+
+console.log(os.cpus().length); // returns the number of CPU cores of the machine
 
 // synchronous file call
 fs.writeFileSync('./test.txt', "Hello World"); // creates a file named test.txt with the content Hello World
@@ -27,3 +30,6 @@ fs.unlinkSync('./contacts-copy.txt'); // deletes the file test.txt
 
 console.log(fs.statSync('./contacts.txt')); // returns the stats of the file test.txt
 
+
+// Default Thread Pool Size = 4
+// Max ? -8 core cpu = 8
